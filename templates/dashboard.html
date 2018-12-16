@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block body %}
+<div class="container h-100">
+  <div class="row h-100">
+    <div class="col-lg-6 my-auto">
+      <div class="header-content mx-auto">
+        <h1 class="mb-5">Dashboard</h1>
+        <a href="/promos" class="btn btn-outline btn-xl js-scroll-trigger">Get Promos!</a>
+      </div>
+    </div>
+    <div class="col-lg-6 my-auto custom-dark-bg">
+      <div class="alert alert-info" role="alert">
+        <!-- <h4 class="alert-heading">Note</h4> -->
+        <p><i class="fa fa-info-circle"></i> All of these values are retrieved from the OIDC <code>id_token</code>. If you click on <code>ID_TOKEN</code> you can see any custom claims in the token provided by Okta in addition to the standard OIDC claims.</p>
+      </div>
+
+      <p>Welcome to the dashboard, <strong>{{ g.user.name }}</strong>!</p>
+      <p>Your email address and username is <code>{{ g.user.email }}</code>.</p>
+      <p>Your user id is <code>{{ g.user.id }}</code>.</p>
+      <p>
+        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+          ID_TOKEN
+        </button>
+        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample2" aria-expanded="false" aria-controls="collapseExample">
+          ACCESS_TOKEN
+        </button>
+      </p>
+      <div class="collapse" id="collapseExample">
+        <code><pre style="color:white;">{{id_token}}</pre></code>
+      </div>
+      <div class="collapse" id="collapseExample2">
+        <code><pre style="color:white;">{{access_token}}</pre></code>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

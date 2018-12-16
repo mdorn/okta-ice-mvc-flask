@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block body %}
+<div class="container h-100">
+  <div class="row h-100">
+    <div class="col-lg-6 my-auto">
+      <div class="header-content mx-auto">
+        <h1 class="mb-5">Promo Codes</h1>
+        <a href="/dashboard" class="btn btn-outline btn-xl js-scroll-trigger">Return to dashboard</a>
+      </div>
+    </div>
+    <div class="col-lg-6 my-auto custom-dark-bg">
+      <div class="alert alert-info" role="alert">
+        <!-- <h4 class="alert-heading">Note</h4> -->
+        <p><i class="fa fa-info-circle"></i>
+          All users of this app (i.e. users who have been assigned the app in Okta) log in requesting the additional <code>promos:read</code> scope, which enables them access to the application and to "public" promos.  Only users belonging to the correct group, which is assigned in Okta (<code>groups</code> is a custom claim in the <code>access_token</code>), will have access to "premium" promos.
+        </p>
+      </div>
+      <ul>
+      {% for promo in promos %}
+        <li>{{ promo.description }} - Use promo code
+          <span class="badge badge-{% if promo.target == 'PUBLIC' %}primary{% else %}danger{% endif %}">{{ promo.code }}
+          </span>
+        </li>
+      {% endfor %}
+      </ul>
+    </div>
+  </div>
+</div>
+{% endblock %}

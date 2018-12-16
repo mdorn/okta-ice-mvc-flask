@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block body %}
+<div class="container h-100">
+  <div class="row h-100">
+    <div class="col-lg-6 my-auto">
+      <div class="header-content mx-auto">
+        <h1 class="mb-5">Welcome!</h1>
+        <a href="/promos" class="btn btn-outline btn-xl js-scroll-trigger">Get Promos!</a>
+      </div>
+    </div>
+    <div class="col-lg-6 my-auto custom-dark-bg">
+      <p>Welcome to the Okta Ice MVC Flask app. It shows you how to give your users access to restricted
+        resources (in this case promo codes for a fictional Ice Cream store) in a simple MVC app using
+        <a href="https://openid.net/connect/">OpenID Connect</a>, <a href="https://oauth.net/2/">OAuth 2.0</a>, and <a href="https://developer.okta.com">Okta</a>.</p>
+    </div>
+  </div>
+</div>
+{% endblock %}

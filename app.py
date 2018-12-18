@@ -1,8 +1,7 @@
 '''
-A simple Flask app that showcases how to easily register and login users using
-OpenID Connect.
+A simple Python/Flask app whose purpose is to demonstrate integrating Okta with
+your OIDC/OAuth2-compliant MVC application.
 '''
-
 
 from os import environ
 import time
